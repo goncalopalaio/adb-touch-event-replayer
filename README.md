@@ -35,3 +35,9 @@ This tool installs an apk that will run a UI test with UI automator continuously
 
 ### Replaykit
  - Only binaries so I currently don't know the method
+
+
+# NOTES
+
+Initialy I wanted to implement something similar to adb-event-record but by reading the events directly from /dev/input/event instead of using adb shell getevent. In my search I found this article [http://newandroidbook.com/Book/Input.html?r] that explains really well how everything works internally.
+It's from this book: [https://www.amazon.com/gp/product/0991055527]
