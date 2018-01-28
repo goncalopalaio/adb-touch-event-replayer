@@ -1,1 +1,37 @@
 # adb-touch-event-replayer
+
+## Work in progress - For now, this is just a bunch of notes.
+
+Opening screens in your Android application again and again to test an issue is really boring.
+Currently there are several tools that might help with this:
+
+* [https://github.com/tzutalin/adb-event-record]
+* [https://github.com/xiaocong/uiautomator]
+* [https://github.com/appetizerio/replaykit]
+
+From my research:
+
+### adb-event-record
+
+Relies heavily on adb to record the events and replay them.
+
+Records events with: 
+```
+adb shell getevent
+```
+Saves the output to file and replays them using:
+```
+adb shell sendevent
+```
+Simple and effective.
+
+### uiautomator
+
+This has a really interesting way of working. 
+There's an Android UI test framework called UI automator [https://developer.android.com/training/testing/ui-automator.html].
+During tests you are able, with this framework, to search and interact with specific View elements, not only in the application you are testing but across all applications, including system settings and whatnot.
+So here's the main idea, what about you were always running a UI test?
+This tool installs an apk that will run a UI test with UI automator continuously in the background, giving you the ability to search for specific views across all the device. That apk that is installed is also responsible for creating an http server in the Android device that then will receive orders from your local computer. 
+
+### Replaykit
+ - Only binaries so I currently don't know the method
