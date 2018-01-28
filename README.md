@@ -23,7 +23,6 @@ Saves the output to file and replays them using:
 ```
 adb shell sendevent
 ```
-Simple and effective.
 
 ### uiautomator
 
