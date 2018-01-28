@@ -39,6 +39,9 @@ This tool installs an apk that will run a UI test with UI automator continuously
 
 # NOTES
 
+### adb-event-record
+Until now I didn't have much success using adb-event-record, it seems to record the events fine on my device, but it replays them, it's not accurate.
+
 Initialy I wanted to implement something similar to adb-event-record but by reading the events directly from /dev/input/event instead of using adb shell getevent. In my search I found this article [http://newandroidbook.com/Book/Input.html?r] that explains really well how everything works internally.
 
 It's from this book: [https://www.amazon.com/gp/product/0991055527]. There's an older version available in the author's website and a new version coming soon.
@@ -46,4 +49,7 @@ It's from this book: [https://www.amazon.com/gp/product/0991055527]. There's an 
 Details about adb shell getevent: [https://source.android.com/devices/input/getevent#showing-live-events]
 Source code here: [http://androidxref.com/8.0.0_r4/xref/system/core/toolbox/getevent.c#673]
 
+### uiautomator
 
+It seems to work fine, but it's a little bit slow. Maybe a more lightweight server would be better?
+Another option would be send all commands to the device initially and do them in sucession instead of relying on a server connection to check the next action.
