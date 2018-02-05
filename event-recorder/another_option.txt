@@ -1,0 +1,5 @@
+# not working but you get the point
+
+adb shell getevent | grep --line-buffered ^/ | tee /tmp/android-touch-events.log
+
+awk '{printf "%s %d %d %d\n", substr($1, 1, length($1) -1), strtonum("0x"$2), strtonum("0x"$3), strtonum("0x"$4)}' /tmp/android-touch-events.log | xargs -l adb shell sendevent

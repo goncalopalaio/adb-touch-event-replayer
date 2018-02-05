@@ -1,0 +1,3 @@
+cd sdcard
+cat /dev/input/event3 > events.txt 
+cat events.txt > /dev/input/event3 
